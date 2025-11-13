@@ -75,7 +75,7 @@ class SpankBangIE(InfoExtractor):
         self._set_cookie('.spankbang.com', 'country', country.upper())
         webpage = self._download_webpage(
             url.replace(f'/{video_id}/embed', f'/{video_id}/video'),
-            video_id, impersonate=True)
+            video_id, impersonate=False)
 
         if re.search(r'<[^>]+\b(?:id|class)=["\']video_removed', webpage):
             raise ExtractorError(
